@@ -1,5 +1,6 @@
-from activity.student import Student
-from activity.comparison import get_student_with_more_classes
+from school_schedule.student import Student
+from school_schedule.middle_school_student import MiddleSchoolStudent
+from school_schedule.comparison import get_student_with_more_classes
 
 # first instance
 samara = Student( "Samara", "junior", [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition" ] )
@@ -11,7 +12,7 @@ samara.get_num_classes()  # => 7
 samara.summary()  # => "Samara is a junior enrolled in 7 classes"
 
 # second instance
-claire = Student( "Claire", "freshman", [ "Algebra", "Writing", "Contemporary World Issues", "Gym", "Earth Science" ] )
+claire = MiddleSchoolStudent( "Claire", "freshman", [ "Algebra", "Writing", "Contemporary World Issues", "Gym", "Earth Science" ] )
 
 claire.add_class("Painting")  # => [ "Algebra", "Writing", "Contemporary World Issues", "Gym", "Earth Science", "Painting" ]
 
@@ -20,4 +21,4 @@ claire.get_num_classes()  # => 6
 claire.summary()  # => "Claire is a freshman enrolled in 6 classes"
 
 # function
-get_student_with_more_classes(claire, samara)  # => samara
+print(get_student_with_more_classes(claire, samara))  # => samara
